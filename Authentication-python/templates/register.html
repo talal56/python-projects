@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div id="loginForm">
+        <h2 class="registration">Create Account</h2>
+
+        {% if message %}
+            <p class="error-message">{{ message }}</p>
+        {% endif %}
+
+        <form id="regForm" action="/register" method="post">
+            <label for="username"><b>Username</b></label>
+            <input type="text" id="username" placeholder="Enter Your Name" name="username" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="abc@gmail.com" name="email" required>
+
+            <label for="pass"><b>Password</b></label>
+            <input type="password" id="password" name="pass" required>
+
+            <label for="confirm"><b>Confirm Password</b></label>
+            <input type="password" id="confirmPass" name="confirm" required>
+
+            <button type="submit"><b>Sign-Up</b></button>
+        </form>
+    </div>
+</body>
+</html>
